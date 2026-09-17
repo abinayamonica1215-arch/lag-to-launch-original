@@ -1,5 +1,14 @@
+# Node & Frontend
+node_modules/
+dist/
+dist-ssr/
+*.local
+.env
+.env.*.local
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
+
 *.py[codz]
 *$py.class
 
