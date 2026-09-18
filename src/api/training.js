@@ -87,7 +87,11 @@ export const trainingApi = {
       },
     ];
 
-    return apiClient.get('/training/modules', {}, fallback);
+    try {
+      return await apiClient.get('/training/modules', {}, fallback);
+    } catch (err) {
+      return fallback();
+    }
   },
 
   /**
@@ -133,7 +137,11 @@ export const trainingApi = {
       return defaultData;
     };
 
-    return apiClient.get('/training/attendance', {}, fallback);
+    try {
+      return await apiClient.get('/training/attendance', {}, fallback);
+    } catch (err) {
+      return fallback();
+    }
   },
 
   /**
@@ -161,7 +169,11 @@ export const trainingApi = {
       return { success: true, message: 'Attendance recorded successfully!', data };
     };
 
-    return apiClient.post('/training/attendance/check-in', {}, {}, fallback);
+    try {
+      return await apiClient.post('/training/attendance/check-in', {}, {}, fallback);
+    } catch (err) {
+      return fallback();
+    }
   },
 };
 

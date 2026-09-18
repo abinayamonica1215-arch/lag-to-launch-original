@@ -25,3 +25,20 @@ class AnalysisSummary(BaseModel):
 class WeakAreaAnalysisResponse(BaseModel):
     summary: AnalysisSummary
     subjects: list[SubjectAnalysisItem]
+
+
+class QuestionFeedbackItem(BaseModel):
+    question: str | None = Field(default=None, description="Text of the question")
+    topic: str | None = Field(default="General", description="Topic tag of the question")
+    is_correct: bool | None = Field(default=None, description="Whether the answer was correct")
+
+
+class QuizFeedbackRequest(BaseModel):
+    subject: str = Field(..., description="Subject name (e.g. Data Structures and Algorithms)")
+    assessment_type: str = Field(..., description="Assessment mode/type (e.g. assessment1, dynamic_self)")
+    score: int = Field(..., description="Number of questions answered correctly")
+    total: int = Field(..., description="Total number of questions in quiz")
+    percentage: int = Field(..., description="Score percentage (0-100)")
+    correct_questions: list[QuestionFeedbackItem] = Field(default_factory=list, description="List of correctly answered questions")
+    wrong_questions: list[QuestionFeedbackItem] = Field(default_factory=list, description="List of incorrectly answered questions")
+

@@ -169,17 +169,35 @@ export const academicApi = {
     return Promise.resolve(SEMESTERS);
   },
 
-  getSubjects(department, semester) {
+  async getSubjects(department, semester) {
     const fallback = () => {
       const deptData = ACADEMIC_CATALOG[department] || ACADEMIC_CATALOG['CSE'];
       return deptData[semester] || deptData['Semester 3'] || [];
     };
 
-    return apiClient.get(
-      `/academic/subjects?department=${encodeURIComponent(department)}&semester=${encodeURIComponent(semester)}`,
+    const semesterNum = String(semester).replace(/\D/g, '') || semester;
+
+    const response = await apiClient.get(
+      `/subjects/${encodeURIComponent(department)}/${encodeURIComponent(semesterNum)}`,
       {},
       fallback
     );
+
+    let subjectsList = response;
+    if (response && typeof response === 'object' && !Array.isArray(response)) {
+      if (Array.isArray(response.subjects)) {
+        subjectsList = response.subjects;
+      }
+    }
+
+    if (Array.isArray(subjectsList)) {
+      return subjectsList.map(s => {
+        if (typeof s === 'string') return s;
+        return s.title || s.name || s.code || 'Unknown Subject';
+      });
+    }
+
+    return subjectsList;
   },
 
   getWeakTopics(subject) {

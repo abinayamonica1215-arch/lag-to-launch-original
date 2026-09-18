@@ -20,8 +20,17 @@ import { arrearsApi } from '../api';
 import { useApp } from '../context/AppContext';
 import { useAuth } from '../context/AuthContext';
 
+// Derive assessment tier from week number and day
+// Week 1 → assessment1 | Week 2 → assessment2 | Week 3 Day 21 → final | Week 3 other → assessment3
+const getAssessmentTier = (weekNumber, day) => {
+  if (weekNumber === 3 && day.dayNumber === 21) return 'final';
+  if (weekNumber === 1) return 'assessment1';
+  if (weekNumber === 2) return 'assessment2';
+  return 'assessment3';
+};
+
 // Reusable Week Component
-const WeekSection = ({ week, onToggleDay }) => {
+const WeekSection = ({ week, onToggleDay, subject }) => {
   const [expanded, setExpanded] = useState(true);
 
   const getDayIcon = (type) => {
@@ -136,7 +145,7 @@ const WeekSection = ({ week, onToggleDay }) => {
 
                 {day.type === 'assessment' ? (
                   <Link
-                    to="/final-assessment"
+                    to={`/final-assessment?type=${getAssessmentTier(week.weekNumber, day)}&subject=${encodeURIComponent(subject || '')}`}
                     className="px-3 py-1 rounded-lg text-xs font-semibold bg-[#0F766E] text-white hover:bg-[#115E59] transition-colors"
                   >
                     Take Quiz
@@ -278,6 +287,7 @@ export const RoadmapPage = () => {
             key={week.id}
             week={week}
             onToggleDay={handleToggleDay}
+            subject={roadmapData?.subject || ''}
           />
         ))}
       </div>

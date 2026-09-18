@@ -15,6 +15,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dsa_1_1',
           category: 'Data Structures & Algorithms',
+          topic: 'Arrays',
           question: 'What is the worst-case time complexity of inserting an element at the beginning of a dynamic array of size N?',
           options: ['O(1)', 'O(log N)', 'O(N)', 'O(N^2)'],
           correctOptionIndex: 2,
@@ -22,6 +23,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dsa_1_2',
           category: 'Data Structures & Algorithms',
+          topic: 'Stacks',
           question: 'Which of the following data structures operates strictly on a LIFO (Last In, First Out) principle?',
           options: ['Queue', 'Stack', 'Circular Linked List', 'Priority Queue'],
           correctOptionIndex: 1,
@@ -29,6 +31,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dsa_1_3',
           category: 'Data Structures & Algorithms',
+          topic: 'Linked Lists',
           question: 'In a Singly Linked List, what is the time complexity to access the k-th element from the head node?',
           options: ['O(1)', 'O(k)', 'O(log k)', 'O(N log N)'],
           correctOptionIndex: 1,
@@ -36,6 +39,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dsa_1_4',
           category: 'Data Structures & Algorithms',
+          topic: 'Linked Lists',
           question: 'Which technique is optimal for detecting a cycle in a Singly Linked List without using extra memory?',
           options: ['Floyd’s Tortoise and Hare (Two Pointers)', 'Hash Set lookup', 'Reversing the list', 'Sorting the nodes'],
           correctOptionIndex: 0,
@@ -43,6 +47,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dsa_1_5',
           category: 'Data Structures & Algorithms',
+          topic: 'Queues',
           question: 'What is the minimum number of Queues required to implement a functional Stack?',
           options: ['1', '2', '3', 'Cannot be implemented'],
           correctOptionIndex: 1,
@@ -57,6 +62,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dsa_2_1',
           category: 'Data Structures & Algorithms',
+          topic: 'Sorting',
           question: 'What is the worst-case time complexity of QuickSort when the pivot is consistently chosen as the smallest or largest element?',
           options: ['O(N log N)', 'O(N)', 'O(N^2)', 'O(log N)'],
           correctOptionIndex: 2,
@@ -64,6 +70,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dsa_2_2',
           category: 'Data Structures & Algorithms',
+          topic: 'Trees',
           question: 'In a Binary Search Tree (BST), which tree traversal order visits nodes in strictly ascending sorted order?',
           options: ['Pre-order', 'In-order', 'Post-order', 'Level-order'],
           correctOptionIndex: 1,
@@ -71,6 +78,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dsa_2_3',
           category: 'Data Structures & Algorithms',
+          topic: 'Heaps',
           question: 'In a Min-Heap with N elements, what is the time complexity of deleting the minimum root element?',
           options: ['O(1)', 'O(log N)', 'O(N)', 'O(N log N)'],
           correctOptionIndex: 1,
@@ -78,6 +86,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dsa_2_4',
           category: 'Data Structures & Algorithms',
+          topic: 'Hashing',
           question: 'What collision resolution technique in Hash Tables resolves collisions by chaining elements into a linked list at each bucket?',
           options: ['Linear Probing', 'Separate Chaining', 'Quadratic Probing', 'Double Hashing'],
           correctOptionIndex: 1,
@@ -85,6 +94,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dsa_2_5',
           category: 'Data Structures & Algorithms',
+          topic: 'Searching',
           question: 'What is the average time complexity of Binary Search on a sorted array of N elements?',
           options: ['O(1)', 'O(log N)', 'O(N)', 'O(N log N)'],
           correctOptionIndex: 1,
@@ -99,6 +109,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dsa_3_1',
           category: 'Data Structures & Algorithms',
+          topic: 'Graphs',
           question: 'Which graph traversal algorithm uses a Queue data structure to explore nodes level-by-level?',
           options: ['Breadth-First Search (BFS)', 'Depth-First Search (DFS)', 'Topological Sort', 'Kruskal’s Algorithm'],
           correctOptionIndex: 0,
@@ -106,6 +117,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dsa_3_2',
           category: 'Data Structures & Algorithms',
+          topic: 'Graphs',
           question: 'Why does Dijkstra’s single-source shortest path algorithm fail on certain graphs?',
           options: ['Graphs with cycles', 'Graphs with negative weight edges', 'Dense graphs', 'Disconnected graphs'],
           correctOptionIndex: 1,
@@ -113,6 +125,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dsa_3_3',
           category: 'Data Structures & Algorithms',
+          topic: 'Dynamic Programming',
           question: 'Which strategy does Dynamic Programming use to avoid re-computing solutions to overlapping subproblems?',
           options: ['Greedy Choice', 'Memoization / Tabulation', 'Divide and Conquer without storage', 'Backtracking'],
           correctOptionIndex: 1,
@@ -120,6 +133,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dsa_3_4',
           category: 'Data Structures & Algorithms',
+          topic: 'Dynamic Programming',
           question: 'In 0/1 Knapsack problem, which algorithmic paradigm yields the optimal solution?',
           options: ['Greedy Approach', 'Dynamic Programming', 'Brute Force Linear Search', 'Binary Search'],
           correctOptionIndex: 1,
@@ -127,6 +141,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dsa_3_5',
           category: 'Data Structures & Algorithms',
+          topic: 'Graphs',
           question: 'Topological Sorting can only be performed on which type of graph?',
           options: ['Undirected Graph', 'Directed Acyclic Graph (DAG)', 'Complete Graph', 'Bipartite Graph'],
           correctOptionIndex: 1,
@@ -141,6 +156,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dsa_f_1',
           category: 'Data Structures & Algorithms',
+          topic: 'Trees',
           question: 'What is the height of a balanced AVL Tree storing N key-value items?',
           options: ['O(log N)', 'O(N)', 'O(N log N)', 'O(1)'],
           correctOptionIndex: 0,
@@ -148,6 +164,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dsa_f_2',
           category: 'Data Structures & Algorithms',
+          topic: 'Sorting',
           question: 'Which sorting algorithm guarantees O(N log N) worst-case time complexity and is stable?',
           options: ['QuickSort', 'MergeSort', 'HeapSort', 'SelectionSort'],
           correctOptionIndex: 1,
@@ -155,6 +172,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dsa_f_3',
           category: 'Data Structures & Algorithms',
+          topic: 'Graphs',
           question: 'What is the time complexity of Bellman-Ford algorithm for a graph with V vertices and E edges?',
           options: ['O(V + E)', 'O(V * E)', 'O(V^3)', 'O(E log V)'],
           correctOptionIndex: 1,
@@ -162,6 +180,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dsa_f_4',
           category: 'Data Structures & Algorithms',
+          topic: 'Stacks',
           question: 'What is the prefix (Polish) notation for the infix expression (A + B) * (C - D)?',
           options: ['* + A B - C D', '+ A B * - C D', 'A B + C D - *', '* A + B C - D'],
           correctOptionIndex: 0,
@@ -169,6 +188,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dsa_f_5',
           category: 'Data Structures & Algorithms',
+          topic: 'Hashing',
           question: 'Which data structure is most efficient to implement LRU (Least Recently Used) Cache with O(1) get and put operations?',
           options: ['Doubly Linked List + Hash Map', 'Binary Search Tree + Queue', 'Array + Stack', 'Priority Queue + Hash Set'],
           correctOptionIndex: 0,
@@ -186,6 +206,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dm_1_1',
           category: 'Discrete Mathematics',
+          topic: 'Sets',
           question: 'If a set S has 4 elements, how many elements are in the power set P(S)?',
           options: ['4', '8', '16', '32'],
           correctOptionIndex: 2,
@@ -193,6 +214,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dm_1_2',
           category: 'Discrete Mathematics',
+          topic: 'Logic',
           question: 'What is the logical equivalent of the implication P -> Q (P implies Q)?',
           options: ['~P OR Q', 'P AND ~Q', '~P AND ~Q', 'Q -> P'],
           correctOptionIndex: 0,
@@ -200,6 +222,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dm_1_3',
           category: 'Discrete Mathematics',
+          topic: 'Logic',
           question: 'Which rule of inference states that if "P -> Q" is true and "P" is true, then "Q" must be true?',
           options: ['Modus Ponens', 'Modus Tollens', 'Hypothetical Syllogism', 'Disjunctive Syllogism'],
           correctOptionIndex: 0,
@@ -207,6 +230,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dm_1_4',
           category: 'Discrete Mathematics',
+          topic: 'Logic',
           question: 'What is a compound proposition that is always true regardless of the truth values of its variables called?',
           options: ['Contradiction', 'Tautology', 'Contingency', 'Predicate'],
           correctOptionIndex: 1,
@@ -214,6 +238,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dm_1_5',
           category: 'Discrete Mathematics',
+          topic: 'Sets',
           question: 'If set A = {1, 2, 3} and set B = {3, 4, 5}, what is the Cartesian product size |A x B|?',
           options: ['3', '6', '9', '15'],
           correctOptionIndex: 2,
@@ -228,6 +253,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dm_2_1',
           category: 'Discrete Mathematics',
+          topic: 'Combinatorics',
           question: 'How many distinct permutations can be formed from the letters of the word "MATH"?',
           options: ['12', '16', '24', '48'],
           correctOptionIndex: 2,
@@ -235,6 +261,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dm_2_2',
           category: 'Discrete Mathematics',
+          topic: 'Combinatorics',
           question: 'According to the Pigeonhole Principle, if 13 pigeons occupy 12 holes, at least one hole must contain at least how many pigeons?',
           options: ['1', '2', '3', '13'],
           correctOptionIndex: 1,
@@ -242,6 +269,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dm_2_3',
           category: 'Discrete Mathematics',
+          topic: 'Recurrence Relations',
           question: 'What is the solution to the homogeneous linear recurrence relation a_n = 2 * a_{n-1} with a_0 = 3?',
           options: ['a_n = 3 * 2^n', 'a_n = 2 * 3^n', 'a_n = 3 + 2n', 'a_n = 6^n'],
           correctOptionIndex: 0,
@@ -249,6 +277,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dm_2_4',
           category: 'Discrete Mathematics',
+          topic: 'Combinatorics',
           question: 'What is the value of C(6, 2), which is the number of combinations choosing 2 items out of 6?',
           options: ['12', '15', '30', '36'],
           correctOptionIndex: 1,
@@ -256,6 +285,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dm_2_5',
           category: 'Discrete Mathematics',
+          topic: 'Recurrence Relations',
           question: 'What is the characteristic equation for the Fibonacci recurrence F_n = F_{n-1} + F_{n-2}?',
           options: ['r^2 - r - 1 = 0', 'r^2 + r - 1 = 0', 'r^2 - 2r + 1 = 0', 'r^2 - 1 = 0'],
           correctOptionIndex: 0,
@@ -270,6 +300,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dm_3_1',
           category: 'Discrete Mathematics',
+          topic: 'Graph Theory',
           question: 'According to the Handshaking Lemma, the sum of the degrees of all vertices in an undirected graph equals:',
           options: ['The number of edges E', 'Twice the number of edges 2E', 'The number of vertices V', 'V * E'],
           correctOptionIndex: 1,
@@ -277,6 +308,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dm_3_2',
           category: 'Discrete Mathematics',
+          topic: 'Graph Theory',
           question: 'An Euler circuit in a connected graph exists if and only if every vertex has:',
           options: ['Odd degree', 'Even degree', 'Degree equal to 2', 'Degree equal to V-1'],
           correctOptionIndex: 1,
@@ -284,6 +316,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dm_3_3',
           category: 'Discrete Mathematics',
+          topic: 'Graph Theory',
           question: 'In Euler’s formula for connected planar graphs (V - E + F), what is the value of V - E + F?',
           options: ['0', '1', '2', '3'],
           correctOptionIndex: 2,
@@ -291,6 +324,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dm_3_4',
           category: 'Discrete Mathematics',
+          topic: 'Algebraic Structures',
           question: 'A group (G, *) that satisfies the commutative property (a * b = b * a) is called:',
           options: ['Abelian Group', 'Monoid', 'Semigroup', 'Cyclic Subgroup'],
           correctOptionIndex: 0,
@@ -298,6 +332,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dm_3_5',
           category: 'Discrete Mathematics',
+          topic: 'Graph Theory',
           question: 'What is the minimum number of colors required to color any planar graph such that no two adjacent vertices share the same color?',
           options: ['2', '3', '4', '5'],
           correctOptionIndex: 2,
@@ -312,6 +347,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dm_f_1',
           category: 'Discrete Mathematics',
+          topic: 'Combinatorics',
           question: 'What is the coefficient of x^3 * y^2 in the binomial expansion of (x + y)^5?',
           options: ['5', '10', '15', '20'],
           correctOptionIndex: 1,
@@ -319,6 +355,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dm_f_2',
           category: 'Discrete Mathematics',
+          topic: 'Relations',
           question: 'Which property is NOT required for a relation R on a set A to be a Partial Order Relation?',
           options: ['Reflexive', 'Antisymmetric', 'Transitive', 'Symmetric'],
           correctOptionIndex: 3,
@@ -326,6 +363,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dm_f_3',
           category: 'Discrete Mathematics',
+          topic: 'Graph Theory',
           question: 'In a tree with N vertices, how many edges does it contain?',
           options: ['N', 'N - 1', 'N + 1', '2N'],
           correctOptionIndex: 1,
@@ -333,6 +371,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dm_f_4',
           category: 'Discrete Mathematics',
+          topic: 'Algebraic Structures',
           question: 'What is Lagrange’s Theorem in Group Theory regarding finite group G and subgroup H?',
           options: ['Order of H divides Order of G', 'Order of G divides Order of H', 'Order of H equals Order of G', 'Order of H is prime'],
           correctOptionIndex: 0,
@@ -340,6 +379,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dm_f_5',
           category: 'Discrete Mathematics',
+          topic: 'Graph Theory',
           question: 'A graph is bipartite if and only if it contains no cycles of:',
           options: ['Even length', 'Odd length', 'Length 3', 'Length 4'],
           correctOptionIndex: 1,
@@ -357,6 +397,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dbms_1_1',
           category: 'Database Management Systems',
+          topic: 'ER Model',
           question: 'In an Entity-Relationship (ER) diagram, how are Weak Entity Sets represented visually?',
           options: ['Double Rectangle', 'Ellipse', 'Diamond', 'Dashed Line'],
           correctOptionIndex: 0,
@@ -364,6 +405,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dbms_1_2',
           category: 'Database Management Systems',
+          topic: 'SQL',
           question: 'Which SQL keyword is used to eliminate duplicate rows from query results?',
           options: ['UNIQUE', 'DISTINCT', 'GROUP BY', 'FILTER'],
           correctOptionIndex: 1,
@@ -371,6 +413,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dbms_1_3',
           category: 'Database Management Systems',
+          topic: 'Relational Model',
           question: 'What type of key uniquely identifies a tuple within a relation and can contain NULL values if not restricted?',
           options: ['Primary Key', 'Candidate Key', 'Super Key', 'Foreign Key'],
           correctOptionIndex: 1,
@@ -378,6 +421,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dbms_1_4',
           category: 'Database Management Systems',
+          topic: 'SQL',
           question: 'Which DDL command is used to permanently delete a table structure and all its data from the database?',
           options: ['DELETE TABLE', 'REMOVE TABLE', 'DROP TABLE', 'TRUNCATE TABLE'],
           correctOptionIndex: 2,
@@ -385,6 +429,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dbms_1_5',
           category: 'Database Management Systems',
+          topic: 'Relational Model',
           question: 'What relational algebra operator performs a Cartesian Product between two relations R and S?',
           options: ['R UNION S', 'R x S', 'R JOIN S', 'R PROJECT S'],
           correctOptionIndex: 1,
@@ -399,6 +444,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dbms_2_1',
           category: 'Database Management Systems',
+          topic: 'Normalization',
           question: 'Which Normal Form requires that no non-prime attribute is transitively dependent on the primary key?',
           options: ['1NF', '2NF', '3NF', 'BCNF'],
           correctOptionIndex: 2,
@@ -406,6 +452,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dbms_2_2',
           category: 'Database Management Systems',
+          topic: 'Normalization',
           question: 'In Boyce-Codd Normal Form (BCNF), for every non-trivial functional dependency X -> Y, X must be a:',
           options: ['Super Key', 'Foreign Key', 'Primary Attribute', 'Atomic Domain'],
           correctOptionIndex: 0,
@@ -413,6 +460,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dbms_2_3',
           category: 'Database Management Systems',
+          topic: 'SQL',
           question: 'Which type of SQL JOIN returns all records from the left table and matched records from the right table?',
           options: ['INNER JOIN', 'LEFT OUTER JOIN', 'RIGHT OUTER JOIN', 'FULL OUTER JOIN'],
           correctOptionIndex: 1,
@@ -420,6 +468,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dbms_2_4',
           category: 'Database Management Systems',
+          topic: 'Normalization',
           question: 'What is a 1NF database table constraint?',
           options: ['No partial dependencies', 'Atomic values in every column', 'No transitive dependencies', 'No multi-valued dependencies'],
           correctOptionIndex: 1,
@@ -427,6 +476,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dbms_2_5',
           category: 'Database Management Systems',
+          topic: 'Normalization',
           question: 'If functional dependency X -> Y holds, what does Armstrong’s Axiom of Augmentation state?',
           options: ['XZ -> YZ holds for any Z', 'X -> Z holds', 'Y -> X holds', 'Z -> XY holds'],
           correctOptionIndex: 0,
@@ -441,6 +491,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dbms_3_1',
           category: 'Database Management Systems',
+          topic: 'Transactions',
           question: 'Which ACID property guarantees that all operations of a transaction are completed or none are executed?',
           options: ['Atomicity', 'Consistency', 'Isolation', 'Durability'],
           correctOptionIndex: 0,
@@ -448,6 +499,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dbms_3_2',
           category: 'Database Management Systems',
+          topic: 'Concurrency Control',
           question: 'In Two-Phase Locking (2PL) protocol, what happens during the shrinking phase?',
           options: ['Locks are acquired only', 'Locks are released only', 'Locks can be acquired and released', 'No locks are used'],
           correctOptionIndex: 1,
@@ -455,6 +507,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dbms_3_3',
           category: 'Database Management Systems',
+          topic: 'Concurrency Control',
           question: 'What concurrency anomaly occurs when a transaction reads data that has been modified by an uncommitted transaction?',
           options: ['Lost Update', 'Dirty Read', 'Non-repeatable Read', 'Phantom Read'],
           correctOptionIndex: 1,
@@ -462,6 +515,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dbms_3_4',
           category: 'Database Management Systems',
+          topic: 'Transactions',
           question: 'Which ACID property ensures that committed changes persist even in the event of a system crash?',
           options: ['Atomicity', 'Consistency', 'Isolation', 'Durability'],
           correctOptionIndex: 3,
@@ -469,6 +523,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dbms_3_5',
           category: 'Database Management Systems',
+          topic: 'Concurrency Control',
           question: 'In Strict 2PL (Strict Two-Phase Locking), when are exclusive locks released?',
           options: ['In growing phase', 'At the end of transaction commit/abort', 'Immediately after read', 'During phase 1'],
           correctOptionIndex: 1,
@@ -483,6 +538,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dbms_f_1',
           category: 'Database Management Systems',
+          topic: 'Indexing',
           question: 'What is the main advantage of a B+ Tree index over a standard B Tree index in databases?',
           options: ['Data pointers stored only at leaf nodes allowing faster range queries', 'Smaller tree height', 'Uses less memory', 'Faster key insertions'],
           correctOptionIndex: 0,
@@ -490,6 +546,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dbms_f_2',
           category: 'Database Management Systems',
+          topic: 'Transactions',
           question: 'Which log-based recovery technique writes changes to disk only after transaction reaches commit point?',
           options: ['Deferred Update', 'Immediate Update', 'Shadow Paging', 'Checkpointing'],
           correctOptionIndex: 0,
@@ -497,6 +554,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dbms_f_3',
           category: 'Database Management Systems',
+          topic: 'Relational Model',
           question: 'In relational algebra, which operator is equivalent to the SQL HAVING clause?',
           options: ['Selection (sigma)', 'Projection (pi)', 'Join (bowtie)', 'Division (divide)'],
           correctOptionIndex: 0,
@@ -504,6 +562,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dbms_f_4',
           category: 'Database Management Systems',
+          topic: 'Transactions',
           question: 'Which isolated transaction level prevents Dirty Reads and Non-repeatable Reads but allows Phantom Reads?',
           options: ['Read Uncommitted', 'Read Committed', 'Repeatable Read', 'Serializable'],
           correctOptionIndex: 2,
@@ -511,6 +570,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'dbms_f_5',
           category: 'Database Management Systems',
+          topic: 'Relational Model',
           question: 'What constraint ensures Referential Integrity between two database tables?',
           options: ['PRIMARY KEY', 'FOREIGN KEY', 'UNIQUE', 'CHECK'],
           correctOptionIndex: 1,
@@ -528,6 +588,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'cn_1_1',
           category: 'Computer Networks',
+          topic: 'Data Link Layer',
           question: 'In the 7-layer OSI model, which layer is responsible for framing, error detection, and MAC addressing?',
           options: ['Physical Layer', 'Data Link Layer', 'Network Layer', 'Transport Layer'],
           correctOptionIndex: 1,
@@ -535,6 +596,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'cn_1_2',
           category: 'Computer Networks',
+          topic: 'Network Layer',
           question: 'Which device operates primarily at Layer 3 (Network Layer) of the OSI model?',
           options: ['Hub', 'Switch', 'Router', 'Repeater'],
           correctOptionIndex: 2,
@@ -542,6 +604,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'cn_1_3',
           category: 'Computer Networks',
+          topic: 'Data Link Layer',
           question: 'What is the Data Link Layer protocol used for detecting collisions in shared Ethernet networks?',
           options: ['CSMA/CD', 'CSMA/CA', 'ALOHA', 'Token Ring'],
           correctOptionIndex: 0,
@@ -549,6 +612,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'cn_1_4',
           category: 'Computer Networks',
+          topic: 'Data Link Layer',
           question: 'What is the maximum payload size (MTU) of a standard Ethernet frame?',
           options: ['512 bytes', '1500 bytes', '4096 bytes', '65535 bytes'],
           correctOptionIndex: 1,
@@ -556,6 +620,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'cn_1_5',
           category: 'Computer Networks',
+          topic: 'OSI / TCP-IP Model',
           question: 'Which OSI layer is responsible for data encryption, compression, and formatting?',
           options: ['Application Layer', 'Presentation Layer', 'Session Layer', 'Transport Layer'],
           correctOptionIndex: 1,
@@ -570,6 +635,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'cn_2_1',
           category: 'Computer Networks',
+          topic: 'Network Layer',
           question: 'What is the default subnet mask for a Class B IPv4 network address?',
           options: ['255.0.0.0', '255.255.0.0', '255.255.255.0', '255.255.255.255'],
           correctOptionIndex: 1,
@@ -577,6 +643,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'cn_2_2',
           category: 'Computer Networks',
+          topic: 'Network Layer',
           question: 'How many usable host IP addresses are available in a CIDR subnet specified as /28?',
           options: ['14', '16', '30', '62'],
           correctOptionIndex: 0,
@@ -584,6 +651,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'cn_2_3',
           category: 'Computer Networks',
+          topic: 'Routing',
           question: 'Which routing protocol uses the Dijkstra shortest path algorithm to compute routing tables?',
           options: ['RIP', 'OSPF', 'BGP', 'EIGRP'],
           correctOptionIndex: 1,
@@ -591,6 +659,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'cn_2_4',
           category: 'Computer Networks',
+          topic: 'Network Layer',
           question: 'What protocol resolves an IP address to a physical MAC address on a local network?',
           options: ['ARP', 'RARP', 'DHCP', 'ICMP'],
           correctOptionIndex: 0,
@@ -598,6 +667,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'cn_2_5',
           category: 'Computer Networks',
+          topic: 'Routing',
           question: 'What is the primary exterior gateway protocol used for routing data across the global Internet?',
           options: ['OSPF', 'IS-IS', 'BGP', 'RIPv2'],
           correctOptionIndex: 2,
@@ -612,6 +682,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'cn_3_1',
           category: 'Computer Networks',
+          topic: 'Transport Layer',
           question: 'What flags are exchanged in order during a standard TCP 3-way handshake connection establishment?',
           options: ['SYN -> SYN-ACK -> ACK', 'ACK -> SYN -> SYN-ACK', 'SYN -> ACK -> FIN', 'FIN -> FIN-ACK -> ACK'],
           correctOptionIndex: 0,
@@ -619,6 +690,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'cn_3_2',
           category: 'Computer Networks',
+          topic: 'Transport Layer',
           question: 'Which of the following transport protocols is connectionless and provides no guaranteed packet delivery?',
           options: ['TCP', 'UDP', 'SCTP', 'HTTP'],
           correctOptionIndex: 1,
@@ -626,6 +698,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'cn_3_3',
           category: 'Computer Networks',
+          topic: 'Transport Layer',
           question: 'What TCP congestion control mechanism reduces the congestion window to 1 MSS upon detecting a timeout?',
           options: ['Slow Start', 'Fast Retransmit', 'Fast Recovery', 'Nagle’s Algorithm'],
           correctOptionIndex: 0,
@@ -633,6 +706,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'cn_3_4',
           category: 'Computer Networks',
+          topic: 'Application Layer',
           question: 'What is the standard port number used for HTTPS secure web traffic?',
           options: ['80', '443', '22', '8080'],
           correctOptionIndex: 1,
@@ -640,6 +714,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'cn_3_5',
           category: 'Computer Networks',
+          topic: 'Transport Layer',
           question: 'In TCP flow control, what is used to prevent the sender from overflowing the receiver’s buffer?',
           options: ['Sliding Window Protocol', 'Leaky Bucket', 'Time-to-Live (TTL)', 'Checksum'],
           correctOptionIndex: 0,
@@ -654,6 +729,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'cn_f_1',
           category: 'Computer Networks',
+          topic: 'Application Layer',
           question: 'In DNS (Domain Name System), which record type maps a domain name to an IPv6 address?',
           options: ['A Record', 'AAAA Record', 'CNAME Record', 'MX Record'],
           correctOptionIndex: 1,
@@ -661,6 +737,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'cn_f_2',
           category: 'Computer Networks',
+          topic: 'Application Layer',
           question: 'What cryptographic protocol replaced SSL to secure HTTP web communication?',
           options: ['TLS', 'IPsec', 'SSH', 'PGP'],
           correctOptionIndex: 0,
@@ -668,6 +745,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'cn_f_3',
           category: 'Computer Networks',
+          topic: 'Network Layer',
           question: 'What is the function of the Time-to-Live (TTL) field in an IPv4 packet header?',
           options: ['Prevents packets from looping endlessly', 'Specifies packet priority', 'Measures network latency', 'Encrypts payload'],
           correctOptionIndex: 0,
@@ -675,6 +753,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'cn_f_4',
           category: 'Computer Networks',
+          topic: 'Application Layer',
           question: 'Which HTTP status code signifies "404 Not Found"?',
           options: ['200', '301', '404', '500'],
           correctOptionIndex: 2,
@@ -682,6 +761,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'cn_f_5',
           category: 'Computer Networks',
+          topic: 'Network Security',
           question: 'What network security device inspects incoming and outgoing traffic based on security rules?',
           options: ['Firewall', 'Modem', 'Hub', 'Bridge'],
           correctOptionIndex: 0,
@@ -699,6 +779,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'os_1_1',
           category: 'Operating Systems',
+          topic: 'CPU Scheduling',
           question: 'Which CPU scheduling algorithm can cause starvation for long processes?',
           options: ['Shortest Job First (SJF)', 'Round Robin', 'First-Come First-Served (FCFS)', 'FIFO'],
           correctOptionIndex: 0,
@@ -706,6 +787,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'os_1_2',
           category: 'Operating Systems',
+          topic: 'Processes',
           question: 'What data structure does the Operating System maintain to store all information about a specific process?',
           options: ['Process Control Block (PCB)', 'Task Control Header', 'Thread Pointer', 'System Inode'],
           correctOptionIndex: 0,
@@ -713,6 +795,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'os_1_3',
           category: 'Operating Systems',
+          topic: 'CPU Scheduling',
           question: 'What is the state transition when a running process is interrupted by a time-quantum expiry in Round Robin scheduling?',
           options: ['Running -> Ready', 'Running -> Waiting', 'Waiting -> Ready', 'Running -> Terminated'],
           correctOptionIndex: 0,
@@ -720,6 +803,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'os_1_4',
           category: 'Operating Systems',
+          topic: 'Threads',
           question: 'What is the primary advantage of Threads over Processes?',
           options: ['Threads share memory space allowing faster context switching and communication', 'Threads have separate memory protection', 'Threads cannot crash', 'Threads run without CPU'],
           correctOptionIndex: 0,
@@ -727,6 +811,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'os_1_5',
           category: 'Operating Systems',
+          topic: 'CPU Scheduling',
           question: 'What scheduling criteria measures the total time elapsed from process submission to its completion?',
           options: ['Turnaround Time', 'Waiting Time', 'Response Time', 'Throughput'],
           correctOptionIndex: 0,
@@ -741,6 +826,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'os_2_1',
           category: 'Operating Systems',
+          topic: 'Deadlocks',
           question: 'Which of the following is NOT one of Coffman’s four necessary conditions for a Deadlock?',
           options: ['Mutual Exclusion', 'Hold and Wait', 'Preemption Allowed', 'Circular Wait'],
           correctOptionIndex: 2,
@@ -748,6 +834,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'os_2_2',
           category: 'Operating Systems',
+          topic: 'Deadlocks',
           question: 'Banker’s algorithm is used in Operating Systems for which purpose?',
           options: ['Deadlock Avoidance', 'Deadlock Detection', 'CPU Scheduling', 'Page Replacement'],
           correctOptionIndex: 0,
@@ -755,6 +842,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'os_2_3',
           category: 'Operating Systems',
+          topic: 'Synchronization',
           question: 'An integer variable used for process synchronization accessed via wait() and signal() atomic operations is called:',
           options: ['Semaphore', 'Mutex Lock', 'Condition Variable', 'Spinlock'],
           correctOptionIndex: 0,
@@ -762,6 +850,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'os_2_4',
           category: 'Operating Systems',
+          topic: 'Synchronization',
           question: 'What is the classic synchronization problem involving bounded buffers, producers, and consumers?',
           options: ['Producer-Consumer Problem', 'Dining Philosophers', 'Readers-Writers', 'Sleeping Barber'],
           correctOptionIndex: 0,
@@ -769,6 +858,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'os_2_5',
           category: 'Operating Systems',
+          topic: 'Synchronization',
           question: 'What condition occurs when multiple processes race to read/write shared data and final outcome depends on execution order?',
           options: ['Race Condition', 'Deadlock', 'Starvation', 'Thrashing'],
           correctOptionIndex: 0,
@@ -783,6 +873,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'os_3_1',
           category: 'Operating Systems',
+          topic: 'Memory Management',
           question: 'What page replacement algorithm suffers from Belady’s Anomaly (where increasing frames increases page faults)?',
           options: ['First-In First-Out (FIFO)', 'Least Recently Used (LRU)', 'Optimal Algorithm', 'Clock Algorithm'],
           correctOptionIndex: 0,
@@ -790,6 +881,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'os_3_2',
           category: 'Operating Systems',
+          topic: 'Memory Management',
           question: 'What hardware memory component caches recent virtual-to-physical address translations for rapid lookup?',
           options: ['Translation Lookaside Buffer (TLB)', 'Page Table Entry', 'Cache Controller', 'L3 Cache'],
           correctOptionIndex: 0,
@@ -797,6 +889,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'os_3_3',
           category: 'Operating Systems',
+          topic: 'Memory Management',
           question: 'What phenomenon occurs when the system spends more time swapping pages in and out of memory than executing processes?',
           options: ['Thrashing', 'Segmentation', 'Paging', 'Fragmentation'],
           correctOptionIndex: 0,
@@ -804,6 +897,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'os_3_4',
           category: 'Operating Systems',
+          topic: 'Memory Management',
           question: 'What type of memory fragmentation occurs when total free memory is sufficient but not contiguous?',
           options: ['External Fragmentation', 'Internal Fragmentation', 'Page Fault', 'Virtual Fault'],
           correctOptionIndex: 0,
@@ -811,6 +905,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'os_3_5',
           category: 'Operating Systems',
+          topic: 'Memory Management',
           question: 'In demand paging, what exception is raised by the MMU when a requested page is not in physical RAM?',
           options: ['Page Fault', 'Segmentation Fault', 'TLB Miss', 'Bus Error'],
           correctOptionIndex: 0,
@@ -825,6 +920,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'os_f_1',
           category: 'Operating Systems',
+          topic: 'File Systems',
           question: 'Which disk scheduling algorithm services disk requests by moving the head back and forth across the disk like an elevator?',
           options: ['SCAN (Elevator Algorithm)', 'FCFS', 'SSTF', 'C-LOOK'],
           correctOptionIndex: 0,
@@ -832,6 +928,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'os_f_2',
           category: 'Operating Systems',
+          topic: 'File Systems',
           question: 'What file system data structure contains metadata about a file (permissions, size, blocks) in UNIX/Linux?',
           options: ['Inode', 'FAT', 'Directory Block', 'Superblock'],
           correctOptionIndex: 0,
@@ -839,6 +936,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'os_f_3',
           category: 'Operating Systems',
+          topic: 'Processes',
           question: 'What is the system call in UNIX used to create a new child process by cloning the calling process?',
           options: ['fork()', 'exec()', 'create()', 'spawn()'],
           correctOptionIndex: 0,
@@ -846,6 +944,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'os_f_4',
           category: 'Operating Systems',
+          topic: 'Processes',
           question: 'What is a process called that has terminated execution but its parent has not yet read its exit status via wait()?',
           options: ['Zombie Process', 'Orphan Process', 'Daemon Process', 'Background Process'],
           correctOptionIndex: 0,
@@ -853,6 +952,7 @@ export const CATEGORY_QUESTION_BANKS = {
         {
           id: 'os_f_5',
           category: 'Operating Systems',
+          topic: 'Memory Management',
           question: 'Which virtual memory management scheme divides memory into variable-sized logical segments (code, data, stack)?',
           options: ['Segmentation', 'Paging', 'Swapping', 'Banking'],
           correctOptionIndex: 0,
@@ -893,6 +993,45 @@ export const assessmentApi = {
       const semLower = semester.toLowerCase();
       const isWeakLink = assessmentType.toLowerCase().includes('weak');
       const isDynamicSelf = assessmentType.toLowerCase().includes('self') || assessmentType.toLowerCase().includes('dynamic');
+
+      // ─── CATEGORY_QUESTION_BANKS lookup for assessment1 / assessment2 / assessment3 ───
+      // These tiers are served when a roadmap "Take Quiz" button navigates with ?type=assessmentN.
+      const TIER_KEYS = ['assessment1', 'assessment2', 'assessment3'];
+      const normType = assessmentType.toLowerCase().trim();
+      if (TIER_KEYS.includes(normType)) {
+        // Find the matching bank key using keyword matching (case-insensitive).
+        const bankKey = Object.keys(CATEGORY_QUESTION_BANKS).find((k) => {
+          const kl = k.toLowerCase();
+          if (subLower.includes('discrete') || subLower.includes('math'))
+            return kl.includes('discrete');
+          if (subLower.includes('database') || subLower.includes('dbms') || subLower.includes('sql'))
+            return kl.includes('database');
+          if (subLower.includes('network'))
+            return kl.includes('network');
+          if (subLower.includes('operating') || subLower.includes(' os'))
+            return kl.includes('operating');
+          // Default: DSA / Data Structures
+          return kl.includes('data struct') || kl.includes('algorithm');
+        });
+
+        const tierBank = bankKey ? CATEGORY_QUESTION_BANKS[bankKey]?.[normType] : null;
+
+        if (tierBank) {
+          return {
+            id: tierBank.id,
+            subject,
+            department,
+            semester,
+            assessmentType: normType,
+            title: tierBank.title,
+            subtitle: `${department} • ${semester}`,
+            durationMinutes: tierBank.durationMinutes,
+            questions: tierBank.questions,
+          };
+        }
+        // If no bank entry found, fall through to the generic inline questions below.
+      }
+      // ─────────────────────────────────────────────────────────────────────────────────
 
       let questions = [];
 
@@ -1048,11 +1187,63 @@ export const assessmentApi = {
       };
     };
 
-    return apiClient.get(
-      `/assessment/category?subject=${encodeURIComponent(subject)}&type=${encodeURIComponent(assessmentType)}&department=${encodeURIComponent(department)}&semester=${encodeURIComponent(semester)}`,
-      {},
-      fallback
-    );
+    // Resolve subject title → subject code via the subjects endpoint, then call the real backend.
+    try {
+      // Extract dept code: use the uppercase abbreviation portion before any dash or space.
+      const deptCode = department.split(/[\s&]/)[0].trim().toUpperCase();
+      // Extract semester number from strings like "Semester 3" or "3".
+      const semMatch = semester.match(/(\d+)/);
+      const semNumber = semMatch ? semMatch[1] : semester;
+
+      // Fetch subjects for this dept/sem to find the matching subject code.
+      const subjectsData = await apiClient.get(`/subjects/${encodeURIComponent(deptCode)}/${semNumber}`);
+      const subjectsList = Array.isArray(subjectsData)
+        ? subjectsData
+        : subjectsData?.subjects || [];
+
+      // Match the selected subject title (case-insensitive) to a subject code.
+      const matchedSubject = subjectsList.find(
+        (s) =>
+          (s.title || s.name || '').toLowerCase() === subject.toLowerCase() ||
+          (s.code || '').toLowerCase() === subject.toLowerCase()
+      );
+
+      if (!matchedSubject?.code) {
+        // Subject not found in this dept/sem — fall back to local questions.
+        console.warn(`[Assessment] Subject '${subject}' not found in backend for ${deptCode} sem ${semNumber}. Using local fallback questions.`);
+        return fallback();
+      }
+
+      const subjectCode = matchedSubject.code.trim().toUpperCase();
+
+      // Fetch real assessment questions from backend.
+      const backendData = await apiClient.get(`/final-assessments/${encodeURIComponent(subjectCode)}`);
+
+      // Normalise to the shape the page expects.
+      return {
+        id: `assess_backend_${subjectCode}`,
+        subject,
+        subjectCode,
+        department,
+        semester,
+        assessmentType,
+        title: `${subject} Assessment`,
+        subtitle: `${department} • ${semester}`,
+        durationMinutes: 20,
+        questions: (backendData.questions || []).map((q) => ({
+          id: q.id,
+          category: subject,
+          question: q.question,
+          options: q.options,
+          // correctOptionIndex is intentionally omitted — the backend grades on submit.
+        })),
+      };
+    } catch (err) {
+      // Any network or 4xx error falls back to local question bank.
+      if (err.status && err.status !== 404) throw err;
+      console.warn('[Assessment] Backend final-assessment unavailable, using local question bank.', err.message);
+      return fallback();
+    }
   },
 
   /**
@@ -1116,7 +1307,11 @@ export const assessmentApi = {
       ],
     });
 
-    return apiClient.get('/assessment/placement-readiness', {}, fallback);
+    try {
+      return await apiClient.get('/assessment/placement-readiness', {}, fallback);
+    } catch (err) {
+      return fallback();
+    }
   },
 
   /**
@@ -1158,7 +1353,11 @@ export const assessmentApi = {
       return result;
     };
 
-    return apiClient.post('/assessment/placement-readiness/submit', submission, {}, fallback);
+    try {
+      return await apiClient.post('/assessment/placement-readiness/submit', submission, {}, fallback);
+    } catch (err) {
+      return fallback();
+    }
   },
 
   /**
@@ -1173,14 +1372,33 @@ export const assessmentApi = {
    */
   async submitFinalAssessment(submission) {
     const fallback = () => {
+      const questions = submission.questions || [];
       const answers = submission.answers || {};
-      let correct = 0;
-      Object.keys(answers).forEach((k) => {
-        if (answers[k] === 0 || answers[k] === 1 || answers[k] === 2) correct++;
-      });
 
-      const total = Object.keys(answers).length || 5;
-      const percentage = Math.round((correct / total) * 100);
+      const correct = questions.filter(
+        (q) => answers[q.id] === q.correctOptionIndex
+      ).length;
+
+      const total = questions.length;
+
+      const percentage = total > 0
+        ? Math.round((correct / total) * 100)
+        : 0;
+
+      // Build per-question result objects for downstream analysis
+      const questionResults = questions.map((q) => {
+        const selectedOptionIndex = answers[q.id] !== undefined ? answers[q.id] : null;
+        const isCorrect = selectedOptionIndex !== null && selectedOptionIndex === q.correctOptionIndex;
+        return {
+          questionId: q.id,
+          question: q.question,
+          category: q.category || '',
+          topic: q.topic || q.category || '',
+          selectedOptionIndex,
+          correctOptionIndex: q.correctOptionIndex,
+          isCorrect,
+        };
+      });
       const passed = percentage >= 60;
 
       return {
@@ -1189,6 +1407,7 @@ export const assessmentApi = {
         score: correct,
         totalScore: total,
         percentage,
+        questionResults,
         message: passed
           ? 'Congratulations! You have successfully passed the Assessment Benchmark. Your status is now updated to Placement Ready!'
           : 'You scored below the 60% clearance threshold. Please review the weak topic notes and re-attempt.',
@@ -1196,8 +1415,159 @@ export const assessmentApi = {
       };
     };
 
-    return apiClient.post('/assessment/final/submit', submission, {}, fallback);
+    // If the assessment was loaded from the real backend it will have a subjectCode
+    // and answers will be keyed by MongoDB ObjectId strings with option-index values.
+    // We must convert to the backend's expected format:
+    //   { subject_code, answers: [{question_id, selected_answer}] }
+    // where selected_answer is the option text (not the index).
+    const subjectCode = submission.subjectCode;
+    const rawAnswers = submission.answers || {};
+    const questions = submission.questions || []; // populated by FinalAssessmentPage
+
+    if (subjectCode && questions.length > 0) {
+      // Build a qId → question map so we can look up the option text.
+      const qMap = {};
+      questions.forEach((q) => { qMap[q.id] = q; });
+
+      const formattedAnswers = Object.entries(rawAnswers)
+        .filter(([qId]) => qMap[qId]) // only include questions that exist
+        .map(([qId, optionIdx]) => ({
+          question_id: qId,
+          selected_answer: qMap[qId]?.options?.[optionIdx] ?? String(optionIdx),
+        }));
+
+      try {
+        const backendResult = await apiClient.post('/final-assessments/submit', {
+          subject_code: subjectCode,
+          answers: formattedAnswers,
+        });
+        // Normalise backend response to the shape FinalAssessmentPage expects.
+        const r = backendResult.result || backendResult;
+        return {
+          success: true,
+          passed: r.passed,
+          score: r.score,
+          totalScore: r.total_questions,
+          percentage: r.percentage,
+          message: r.passed
+            ? 'Congratulations! You have successfully passed the Assessment Benchmark. Your status is now updated to Placement Ready!'
+            : 'You scored below the 60% clearance threshold. Please review the weak topic notes and re-attempt.',
+          newStatus: r.passed ? 'No Arrears' : 'Active Arrears',
+        };
+      } catch (err) {
+        console.warn('[Assessment] Backend submit failed, falling back to local grading.', err.message);
+        return fallback();
+      }
+    }
+
+    // Legacy path: assessment loaded from local question bank — submit locally.
+    return fallback();
+  },
+
+  /**
+   * Deterministic performance analysis based solely on the current quiz's questionResults.
+   * Uses ONLY the provided questionResults — no localStorage, no history, no previous attempts.
+   *
+   * @param {Array}  questionResults  - Array of { questionId, question, topic, isCorrect, ... }
+   * @param {string} subject          - Subject name (e.g. 'Data Structures & Algorithms')
+   * @param {string} assessmentType   - 'assessment1' | 'assessment2' | 'assessment3' | 'final'
+   * @returns {{
+   *   correctCount, wrongCount, total, percentage,
+   *   weakTopics, strongTopics,
+   *   wrongQuestions, correctQuestions,
+   *   recommendation, performanceLevel
+   * }}
+   */
+  analyzePerformance(questionResults = [], subject = '', assessmentType = '') {
+    // Partition results — do not mutate the input array
+    const wrongQuestions  = questionResults.filter((r) => !r.isCorrect);
+    const correctQuestions = questionResults.filter((r) => r.isCorrect);
+
+    const total        = questionResults.length;
+    const correctCount = correctQuestions.length;
+    const wrongCount   = wrongQuestions.length;
+    const percentage   = total > 0 ? Math.round((correctCount / total) * 100) : 0;
+
+    // Deduplicated topic lists derived from the current quiz only
+    const weakTopics = [...new Set(
+      wrongQuestions.map((r) => r.topic).filter(Boolean)
+    )];
+    const strongTopics = [...new Set(
+      correctQuestions.map((r) => r.topic).filter(Boolean)
+    )].filter((t) => !weakTopics.includes(t)); // exclude topics that also appear in wrong answers
+
+    // Performance level — spec thresholds: <50 | 50-79 | >=80
+    let performanceLevel;
+    if (percentage >= 80) {
+      performanceLevel = 'Strong';
+    } else if (percentage >= 50) {
+      performanceLevel = 'Developing';
+    } else {
+      performanceLevel = 'Needs Improvement';
+    }
+
+    // Recommendation — spec thresholds: <50 | 50-79 | >=80
+    let recommendation;
+    if (percentage >= 80) {
+      if (weakTopics.length === 0) {
+        recommendation = `Excellent work on ${subject}! You demonstrated strong mastery across all topics. Proceed to the next learning stage.`;
+      } else {
+        recommendation = `Strong performance on ${subject}! Consider revising ${weakTopics.join(', ')} briefly before moving ahead.`;
+      }
+    } else if (percentage >= 50) {
+      if (weakTopics.length > 0) {
+        recommendation = `Good progress on ${subject}. Review and practise ${weakTopics.join(', ')} to strengthen your understanding before the next assessment.`;
+      } else {
+        recommendation = `Good progress on ${subject}. Keep practising to consolidate your understanding and reach the next performance tier.`;
+      }
+    } else {
+      if (weakTopics.length > 0) {
+        recommendation = `Revise ${weakTopics.join(', ')} in ${subject} before re-attempting. These topics had the most incorrect answers — focused revision will improve your score significantly.`;
+      } else {
+        recommendation = `Review all topics in ${subject} and re-attempt this assessment. Consistent practice will help you reach the 50% threshold.`;
+      }
+    }
+
+    return {
+      correctCount,
+      wrongCount,
+      total,
+      percentage,
+      weakTopics,
+      strongTopics,
+      wrongQuestions,
+      correctQuestions,
+      recommendation,
+      performanceLevel,
+    };
+  },
+
+  /**
+   * Request AI-powered quiz performance feedback from the backend FastAPI Gemini service.
+   * Endpoint: POST /api/analysis/quiz-feedback
+   */
+  async getAIQuizFeedback(payload) {
+    return await apiClient.post('/analysis/quiz-feedback', payload, { timeout: 30000 });
   },
 };
 
 export default assessmentApi;
+
+/**
+ * Standalone named export so callers can import analyzePerformance directly:
+ *   import { analyzePerformance } from '../api/assessment';
+ * The implementation delegates to the method on assessmentApi so there is
+ * exactly one source of truth — no duplication.
+ */
+export function analyzePerformance(questionResults, subject, assessmentType) {
+  return assessmentApi.analyzePerformance(questionResults, subject, assessmentType);
+}
+
+/**
+ * Standalone named export for AI quiz feedback:
+ *   import { getAIQuizFeedback } from '../api/assessment';
+ */
+export function getAIQuizFeedback(payload) {
+  return assessmentApi.getAIQuizFeedback(payload);
+}
+

@@ -3,7 +3,8 @@ from bson.errors import InvalidId
 from fastapi import APIRouter, Depends, HTTPException, status
 from app.core.database import get_database
 from app.core.security import get_current_student
-from app.models.analysis import WeakAreaAnalysisResponse
+from app.models.analysis import WeakAreaAnalysisResponse, QuizFeedbackRequest
+from app.services.ai_service import QuizAIAnalysis, AIServiceError, analyze_quiz_performance
 
 router = APIRouter(prefix="/analysis", tags=["analysis"])
 
@@ -117,3 +118,36 @@ def get_weak_area_analysis(current_student: dict = Depends(get_current_student))
         "summary": summary,
         "subjects": subject_items,
     }
+
+
+@router.post("/quiz-feedback", response_model=QuizAIAnalysis, status_code=status.HTTP_200_OK)
+def get_quiz_ai_feedback(
+    payload: QuizFeedbackRequest,
+    current_student: dict = Depends(get_current_student),
+):
+    """
+    Generates AI-powered feedback for a completed quiz assessment using Google Gemini.
+    Accepts student quiz performance data and returns structured feedback.
+    Requires student authentication.
+    """
+    try:
+        correct_dicts = [q.model_dump() for q in payload.correct_questions]
+        wrong_dicts = [q.model_dump() for q in payload.wrong_questions]
+
+        analysis = analyze_quiz_performance(
+            subject=payload.subject,
+            assessment_type=payload.assessment_type,
+            score=payload.score,
+            total=payload.total,
+            percentage=payload.percentage,
+            correct_questions=correct_dicts,
+            wrong_questions=wrong_dicts,
+        )
+        return analysis
+    except AIServiceError as exc:
+        raise HTTPException(status_code=exc.status_code, detail=exc.message)
+    except Exception as exc:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="An error occurred while generating AI quiz feedback."
+        ) from exc

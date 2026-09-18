@@ -38,3 +38,77 @@ class ArrearListResponse(BaseModel):
 class ArrearDeleteResponse(BaseModel):
     message: str
 
+
+class ArrearAnalyzeRequest(BaseModel):
+    studentName: str | None = None
+    email: str | None = None
+    department: str | None = None
+    batch: str | None = None
+    arrearSemester: str | None = None
+    selectedSubjects: list[str] = Field(default_factory=list)
+    attempts: str | None = None
+    preparationLevel: str | None = None
+    perSubjectWeakAreas: dict[str, list[str]] = Field(default_factory=dict)
+    studyAvailability: str | None = None
+    preferredStudyTime: str | None = None
+    availableDays: list[str] = Field(default_factory=list)
+    preparationStatus: str | None = None
+    targetExamDate: str | None = None
+
+
+class RoadmapDay(BaseModel):
+    id: str
+    dayNumber: int
+    title: str
+    duration: str
+    type: str
+    completed: bool = False
+    topics: list[str]
+
+
+class RoadmapWeek(BaseModel):
+    id: str
+    weekNumber: int
+    title: str
+    description: str
+    progressPercent: int = 0
+    days: list[RoadmapDay]
+
+
+class SubjectDiagnosis(BaseModel):
+    subject: str
+    weakAreas: list[str]
+    summary: str
+    weeks: list[RoadmapWeek]
+
+
+class ArrearAnalysis(BaseModel):
+    arrearId: str
+    subject: str
+    selectedSubjects: list[str]
+    semester: str | None = None
+    attempts: str | None = None
+    preparationLevel: str | None = None
+    recommendedDailyHours: str | None = None
+    keyFocusAreas: list[str]
+    summary: str
+    subjectDiagnoses: list[SubjectDiagnosis]
+
+
+class ArrearRoadmap(BaseModel):
+    id: str
+    subject: str
+    selectedSubjects: list[str]
+    totalWeeks: int
+    totalDays: int
+    completedDays: int = 0
+    currentDay: int = 1
+    weeks: list[RoadmapWeek]
+    subjectDiagnoses: list[SubjectDiagnosis]
+
+
+class ArrearAnalyzeResponse(BaseModel):
+    success: bool = True
+    arrearId: str
+    analysis: ArrearAnalysis
+    roadmap: ArrearRoadmap

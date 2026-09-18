@@ -139,7 +139,7 @@ export const arrearsApi = {
       });
     };
 
-    return apiClient.get('/arrears/active-roadmap', {}, fallback);
+    return apiClient.get('/roadmap/recovery', {}, fallback);
   },
 
   /**
@@ -167,6 +167,11 @@ export const arrearsApi = {
       return { success: true, dayId, completed };
     };
 
+    // Client-generated roadmap IDs start with 'rdm_' — no backend endpoint exists for these.
+    // Skip the API request entirely and use the localStorage fallback directly.
+    if (typeof roadmapId === 'string' && roadmapId.startsWith('rdm_')) {
+      return fallback();
+    }
     return apiClient.post(`/arrears/roadmap/${roadmapId}/days/${dayId}/toggle`, { completed }, {}, fallback);
   },
 };

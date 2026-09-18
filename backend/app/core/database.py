@@ -36,9 +36,9 @@ db = None
 if MONGODB_URI:
     try:
         client_kwargs = {}
-        if ca_file and "tlsAllowInvalidCertificates" not in MONGODB_URI and "tlsInsecure" not in MONGODB_URI:
+        if ca_file:
             client_kwargs["tlsCAFile"] = ca_file
-        _temp_client = MongoClient(MONGODB_URI, serverSelectionTimeoutMS=5000, **client_kwargs)
+        _temp_client = MongoClient(MONGODB_URI, serverSelectionTimeoutMS=500, **client_kwargs)
         _temp_client.admin.command("ping")
         client = _temp_client
         try:
@@ -133,6 +133,12 @@ def test_connection() -> bool:
     """
     if client is None:
         print("[MongoDB] Connection test failed: MONGODB_URI is missing or not configured.")
+        return False
+
+    # Detect if we silently fell back to mongomock (not a real Atlas connection)
+    client_module = getattr(type(client), "__module__", "")
+    if "mongomock" in client_module:
+        print("[MongoDB] Connection test failed: using in-memory mongomock, not Atlas.")
         return False
 
     try:

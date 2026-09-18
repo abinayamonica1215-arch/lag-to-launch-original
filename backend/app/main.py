@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from app.api.departments import router as departments_router
 from app.api.subjects import router as subjects_router
 from app.api.topics import router as topics_router
@@ -18,6 +19,19 @@ from app.api.placement_readiness import router as placement_readiness_router
 from app.api.placement_roadmap import router as placement_roadmap_router
 
 app = FastAPI(title="Lag to Launch API")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "http://localhost:5174",
+        "http://127.0.0.1:5174",
+    ],
+    allow_credentials=True,
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allow_headers=["*", "Authorization", "Content-Type"],
+)
 
 app.include_router(departments_router, prefix="/api")
 app.include_router(subjects_router, prefix="/api")

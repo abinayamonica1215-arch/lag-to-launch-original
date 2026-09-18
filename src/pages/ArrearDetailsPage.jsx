@@ -48,6 +48,7 @@ export const ArrearDetailsPage = () => {
   const [preferredStudyTime, setPreferredStudyTime] = useState('Evening');
   const [availableDays, setAvailableDays] = useState(['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']);
   const [preparationStatus, setPreparationStatus] = useState('Started learning');
+  const [targetExamDate, setTargetExamDate] = useState('');
   const [activeSubjectTab, setActiveSubjectTab] = useState('');
 
   const [loadingSubjects, setLoadingSubjects] = useState(false);
@@ -65,7 +66,28 @@ export const ArrearDetailsPage = () => {
     const fetchSubjects = async () => {
       setLoadingSubjects(true);
       try {
-        const subjects = await academicApi.getSubjects(department, arrearSemester);
+        const response = await academicApi.getSubjects(department, arrearSemester);
+        
+        let subjects = response;
+        if (response && typeof response === 'object' && !Array.isArray(response)) {
+          if (Array.isArray(response.subjects)) {
+            subjects = response.subjects;
+          } else if (response.data && Array.isArray(response.data)) {
+            subjects = response.data;
+          } else if (response.data && Array.isArray(response.data.subjects)) {
+            subjects = response.data.subjects;
+          }
+        }
+        
+        if (!Array.isArray(subjects)) {
+          subjects = [];
+        }
+
+        subjects = subjects.map(s => {
+          if (typeof s === 'string') return s;
+          return s?.title || s?.name || s?.code || 'Unknown Subject';
+        });
+
         setAvailableSubjects(subjects);
         if (subjects.length > 0) {
           setSelectedSubjects(subjects);
@@ -103,6 +125,40 @@ export const ArrearDetailsPage = () => {
     );
   };
 
+  const [availableWeakTopics, setAvailableWeakTopics] = useState([]);
+  const [otherWeakTopic, setOtherWeakTopic] = useState('');
+
+  useEffect(() => {
+    const fetchWeakTopics = async () => {
+      if (activeSubjectTab) {
+        try {
+          const topics = await academicApi.getWeakTopics(activeSubjectTab);
+          setAvailableWeakTopics(topics || []);
+        } catch (err) {
+          console.error('Failed to load weak topics:', err);
+          setAvailableWeakTopics([]);
+        }
+      } else {
+        setAvailableWeakTopics([]);
+      }
+    };
+    fetchWeakTopics();
+  }, [activeSubjectTab]);
+
+  const arrearSubject = activeSubjectTab || '';
+  const selectedWeakAreas = (arrearSubject && perSubjectWeakAreas[arrearSubject]) || [];
+
+  const toggleWeakArea = (topic) => {
+    if (!arrearSubject) return;
+    setPerSubjectWeakAreas((prev) => {
+      const current = prev[arrearSubject] || [];
+      const updated = current.includes(topic)
+        ? current.filter((t) => t !== topic)
+        : [...current, topic];
+      return { ...prev, [arrearSubject]: updated };
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (selectedSubjects.length === 0) {
@@ -131,6 +187,7 @@ export const ArrearDetailsPage = () => {
         preferredStudyTime,
         availableDays,
         preparationStatus,
+        targetExamDate,
       };
 
       // API call to Backend / AI

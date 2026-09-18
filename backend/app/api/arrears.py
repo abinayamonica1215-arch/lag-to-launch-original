@@ -11,6 +11,8 @@ from app.models.arrears import (
     ArrearCompleteResponse,
     ArrearListResponse,
     ArrearDeleteResponse,
+    ArrearAnalyzeRequest,
+    ArrearAnalyzeResponse,
 )
 
 router = APIRouter(prefix="/arrears", tags=["arrears"])
@@ -295,4 +297,145 @@ def delete_student_arrear(arrear_id: str, current_student: dict = Depends(get_cu
     db.arrears.delete_one({"_id": arr_obj_id, "student_id": student_obj_id})
 
     return {"message": "Arrear deleted successfully"}
+
+
+@router.post("/analyze", response_model=ArrearAnalyzeResponse, status_code=status.HTTP_200_OK)
+def analyze_arrears(payload: ArrearAnalyzeRequest, current_student: dict = Depends(get_current_student)):
+    """
+    Generates a personalized, deterministic day-by-day study roadmap for the submitted arrears.
+    Uses real topic data from MongoDB.
+    """
+    db = get_database()
+    if db is None:
+        raise HTTPException(status_code=500, detail="Database connection not available")
+
+    student_dept = str(current_student.get("department_code", "")).strip().upper()
+    student_sem = current_student.get("semester")
+    
+    selected_subjects = payload.selectedSubjects
+    if not selected_subjects:
+        raise HTTPException(status_code=400, detail="No selected subjects provided.")
+
+    arrear_id = "arr_" + str(int(datetime.now(timezone.utc).timestamp() * 1000))
+    subject_diagnoses = []
+    
+    # Roadmap properties
+    total_weeks = 3
+    days_per_week = len(payload.availableDays) if payload.availableDays else 6
+    if days_per_week == 0:
+        days_per_week = 6
+    total_days = total_weeks * days_per_week
+    
+    day_duration = payload.studyAvailability if payload.studyAvailability else "2-3 hours"
+
+    for subj_title_or_code in selected_subjects:
+        # Query db.subjects matching the subject title or code
+        subj_query = {
+            "$or": [
+                {"code": {"$regex": f"^{subj_title_or_code}$", "$options": "i"}},
+                {"title": {"$regex": f"^{subj_title_or_code}$", "$options": "i"}},
+                {"name": {"$regex": f"^{subj_title_or_code}$", "$options": "i"}}
+            ]
+        }
+        subject_doc = db.subjects.find_one(subj_query)
+        
+        real_topics = []
+        if subject_doc:
+            subj_id = subject_doc["_id"]
+            topic_cursor = db.topics.find({"subject_id": subj_id}).sort("unit_number", 1)
+            for t in topic_cursor:
+                title = t.get("title") or t.get("name") or f"Unit {t.get('unit_number', 1)}"
+                real_topics.append(title)
+        
+        if not real_topics:
+            real_topics = ["Introduction & Concepts", "Core Theories", "Problem Solving", "Exam Practice"]
+            
+        weak_areas = payload.perSubjectWeakAreas.get(subj_title_or_code, [])
+        if not weak_areas:
+            weak_areas = ["Core Concepts", "Problem Solving"]
+            
+        weeks_data = []
+        local_day_counter = 1
+        
+        for w in range(1, total_weeks + 1):
+            days_data = []
+            for d in range(1, days_per_week + 1):
+                # Distribute topics
+                topic_idx = (w - 1) * days_per_week + (d - 1)
+                
+                # Prioritize weak areas in the first few days
+                day_topics = []
+                if topic_idx < len(weak_areas):
+                    day_topics = [weak_areas[topic_idx]]
+                else:
+                    real_idx = (topic_idx - len(weak_areas)) % len(real_topics)
+                    day_topics = [real_topics[real_idx]]
+                
+                day_type = "learning"
+                if d == days_per_week:
+                    day_type = "assessment"
+                elif d == days_per_week - 1:
+                    day_type = "practice"
+                
+                days_data.append({
+                    "id": f"w{w}d{d}_{subj_title_or_code}",
+                    "dayNumber": local_day_counter,
+                    "title": f"Day {local_day_counter}: {day_topics[0]}",
+                    "duration": day_duration,
+                    "type": day_type,
+                    "completed": False,
+                    "topics": day_topics
+                })
+                local_day_counter += 1
+                
+            weeks_data.append({
+                "id": f"w{w}_{subj_title_or_code}",
+                "weekNumber": w,
+                "title": f"Week {w} Study Plan",
+                "description": f"Focusing on {subj_title_or_code} mastery.",
+                "progressPercent": 0,
+                "days": days_data
+            })
+            
+        subject_diagnoses.append({
+            "subject": subj_title_or_code,
+            "weakAreas": weak_areas,
+            "summary": f"Diagnostic analysis for {subj_title_or_code}. Preparation level is {payload.preparationLevel or 'Basic'}.",
+            "weeks": weeks_data
+        })
+        
+    primary_subject = selected_subjects[0]
+    primary_diagnosis = subject_diagnoses[0]
+    
+    analysis = {
+        "arrearId": arrear_id,
+        "subject": primary_subject,
+        "selectedSubjects": selected_subjects,
+        "semester": payload.arrearSemester,
+        "attempts": payload.attempts,
+        "preparationLevel": payload.preparationLevel,
+        "recommendedDailyHours": day_duration,
+        "keyFocusAreas": primary_diagnosis["weakAreas"],
+        "summary": f"Structured multi-subject preparation plan generated for {len(selected_subjects)} arrear subject(s).",
+        "subjectDiagnoses": subject_diagnoses
+    }
+    
+    roadmap = {
+        "id": "rdm_" + str(int(datetime.now(timezone.utc).timestamp() * 1000)),
+        "subject": primary_subject,
+        "selectedSubjects": selected_subjects,
+        "totalWeeks": total_weeks,
+        "totalDays": total_days,
+        "completedDays": 0,
+        "currentDay": 1,
+        "weeks": primary_diagnosis["weeks"],
+        "subjectDiagnoses": subject_diagnoses
+    }
+    
+    return {
+        "success": True,
+        "arrearId": arrear_id,
+        "analysis": analysis,
+        "roadmap": roadmap
+    }
 
