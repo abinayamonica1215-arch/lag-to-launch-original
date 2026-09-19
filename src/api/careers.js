@@ -75,7 +75,14 @@ export const careersApi = {
       },
     ];
 
-    return apiClient.get('/careers/opportunities', {}, fallback);
+    try {
+      return await apiClient.get('/careers/opportunities', {}, fallback);
+    } catch (err) {
+      if (err?.status === 404 || err?.data?.status === 404 || err?.message === 'Not Found' || err?.message?.includes('404')) {
+        return fallback();
+      }
+      throw err;
+    }
   },
 
   /**
@@ -89,7 +96,14 @@ export const careersApi = {
       status: 'Applied',
     });
 
-    return apiClient.post(`/careers/apply/${jobId}`, {}, {}, fallback);
+    try {
+      return await apiClient.post(`/careers/apply/${jobId}`, {}, {}, fallback);
+    } catch (err) {
+      if (err?.status === 404 || err?.data?.status === 404 || err?.message === 'Not Found' || err?.message?.includes('404')) {
+        return fallback();
+      }
+      throw err;
+    }
   },
 
   /**
@@ -110,7 +124,14 @@ export const careersApi = {
       ],
     });
 
-    return apiClient.get('/careers/summary', {}, fallback);
+    try {
+      return await apiClient.get('/careers/summary', {}, fallback);
+    } catch (err) {
+      if (err?.status === 404 || err?.data?.status === 404 || err?.message === 'Not Found' || err?.message?.includes('404')) {
+        return fallback();
+      }
+      throw err;
+    }
   },
 };
 

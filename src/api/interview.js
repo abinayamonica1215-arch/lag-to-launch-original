@@ -44,7 +44,14 @@ export const interviewApi = {
       ],
     });
 
-    return apiClient.get(`/interview/session?domain=${encodeURIComponent(domain)}`, {}, fallback);
+    try {
+      return await apiClient.get(`/interview/session?domain=${encodeURIComponent(domain)}`, {}, fallback);
+    } catch (err) {
+      if (err?.status === 404 || err?.data?.status === 404 || err?.message === 'Not Found' || err?.message?.includes('404')) {
+        return fallback();
+      }
+      throw err;
+    }
   },
 
   /**
@@ -150,7 +157,14 @@ export const interviewApi = {
       };
     };
 
-    return apiClient.post('/interview/submit-answer', data, {}, fallback);
+    try {
+      return await apiClient.post('/interview/submit-answer', data, {}, fallback);
+    } catch (err) {
+      if (err?.status === 404 || err?.data?.status === 404 || err?.message === 'Not Found' || err?.message?.includes('404')) {
+        return fallback();
+      }
+      throw err;
+    }
   },
 
   /**
@@ -179,7 +193,14 @@ export const interviewApi = {
       ],
     });
 
-    return apiClient.get(`/interview/${sessionId}/final-feedback`, {}, fallback);
+    try {
+      return await apiClient.get(`/interview/${sessionId}/final-feedback`, {}, fallback);
+    } catch (err) {
+      if (err?.status === 404 || err?.data?.status === 404 || err?.message === 'Not Found' || err?.message?.includes('404')) {
+        return fallback();
+      }
+      throw err;
+    }
   },
 };
 
