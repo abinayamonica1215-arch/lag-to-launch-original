@@ -1308,7 +1308,7 @@ export const assessmentApi = {
     });
 
     try {
-      return await apiClient.get('/assessment/placement-readiness', {}, fallback);
+      return await apiClient.get('/placement-readiness', {}, fallback);
     } catch (err) {
       return fallback();
     }
@@ -1354,7 +1354,7 @@ export const assessmentApi = {
     };
 
     try {
-      return await apiClient.post('/assessment/placement-readiness/submit', submission, {}, fallback);
+      return await apiClient.post('/placement-readiness/submit', submission, {}, fallback);
     } catch (err) {
       return fallback();
     }

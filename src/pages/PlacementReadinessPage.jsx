@@ -308,7 +308,7 @@ export const PlacementReadinessPage = () => {
                     <ArrowRight className="w-4 h-4" />
                   </button>
                   <button
-                    onClick={() => navigate('/training')}
+                    onClick={() => navigate('/placement-roadmap')}
                     className="px-5 py-2.5 rounded-xl text-xs font-bold text-slate-800 bg-[#CCFBF1] hover:bg-teal-100 border border-teal-200 flex items-center justify-center gap-2 transition-all"
                   >
                     <span>View AI Study Roadmap</span>

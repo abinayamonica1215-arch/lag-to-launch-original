@@ -6,3 +6,4 @@ export { assessmentApi } from './assessment';
 export { trainingApi } from './training';
 export { interviewApi } from './interview';
 export { careersApi } from './careers';
+export { placementRoadmapApi } from './placementRoadmap';

@@ -13,6 +13,7 @@ import PlacementReadinessPage from './pages/PlacementReadinessPage';
 import MockInterviewPage from './pages/MockInterviewPage';
 import CareerPage from './pages/CareerPage';
 import FinalAssessmentPage from './pages/FinalAssessmentPage';
+import PlacementRoadmapPage from './pages/PlacementRoadmapPage';
 
 export const App = () => {
   return (
@@ -34,6 +35,7 @@ export const App = () => {
           <Route path="/mock-interview" element={<MockInterviewPage />} />
           <Route path="/careers" element={<CareerPage />} />
           <Route path="/final-assessment" element={<FinalAssessmentPage />} />
+          <Route path="/placement-roadmap" element={<PlacementRoadmapPage />} />
         </Route>
 
         {/* Fallback to Home */}
